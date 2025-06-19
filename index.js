@@ -25,7 +25,14 @@ const googleAuth = require("./routes/googleAuth/googleAuth"); //  Google Auth Ro
 const orders = require("./routes/orders/orders"); //  Google Auth Routes
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://zepxtheecommerece.vercel.app"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -36,7 +43,7 @@ app.use(bodyParser.json());
 app.use("/", signup);
 app.use("/", contact);
 app.use("/", category);
-app.use("/", product);
+app.use("/product", product);
 app.use("/", cart);
 app.use("/", getoffer);
 app.use("/", banner);
