@@ -224,20 +224,17 @@ const connection = require("../../connection/connection");
 // };
 
 const getproduct = (req, res) => {
-  console.log("✅ /getproducts route called");
+  connection.query("SELECT * FROM products", (err, result) => {
+    if (err) {
+      console.log("❌ DB error:", err);
+      return res.status(500).json({ error: "Database error" });
+    }
 
-  // test response
-  res.json([{ id: 1, title: "Dummy Product" }]);
-
-  // Actual DB query — comment for now
-  // connection.query("SELECT * FROM products", (err, result) => {
-  //   if (err) {
-  //     console.log("DB error:", err);
-  //     return res.status(500).json({ error: "Database error" });
-  //   }
-  //   res.json(result);
-  // });
+    console.log("✅ Products fetched:", result.length);
+    res.json(result);
+  });
 };
+
 
 
 const getproductsbycategory = (req, res) => {
