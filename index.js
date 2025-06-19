@@ -54,6 +54,9 @@ app.use("/auth", googleAuth);
 app.use("/", orders);
 
 
+app.get("/", (req, res) => {
+  res.send("🚀 ZEPX Backend Working!");
+});
 
 
 
