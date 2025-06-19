@@ -212,16 +212,33 @@
 const connection = require("../../connection/connection");
 
 // for get api
+// const getproduct = (req, res) => {
+//   const q = "SELECT * FROM products";
+//   connection.query(q, (err, results) => {
+//     if (err) {
+//       res.status(500).json({ err: "error in fetching" })
+//     } else {
+//       res.status(200).json(results)
+//     }
+//   })
+// };
+
 const getproduct = (req, res) => {
-  const q = "SELECT * FROM products";
-  connection.query(q, (err, results) => {
-    if (err) {
-      res.status(500).json({ err: "error in fetching" })
-    } else {
-      res.status(200).json(results)
-    }
-  })
+  console.log("✅ /getproducts route called");
+
+  // test response
+  res.json([{ id: 1, title: "Dummy Product" }]);
+
+  // Actual DB query — comment for now
+  // connection.query("SELECT * FROM products", (err, result) => {
+  //   if (err) {
+  //     console.log("DB error:", err);
+  //     return res.status(500).json({ error: "Database error" });
+  //   }
+  //   res.json(result);
+  // });
 };
+
 
 const getproductsbycategory = (req, res) => {
   const { id } = req.params;
