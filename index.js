@@ -64,14 +64,14 @@ app.get("/", (req, res) => {
 //  Fix the .env variables
 const PORT = process.env.PORT || 4800;
 
-connection.connect((error) => {
-    if (error) {
-        console.log("Database Connection Failed!");
-    } else {
-        console.log(" Database Connected!");
-    }
+// connection.connect((error) => {
+//     if (error) {
+//         console.log("Database Connection Failed!");
+//     } else {
+//         console.log(" Database Connected!");
+//     }
 
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-});
+//     app.listen(PORT, () => {
+//         console.log(`Server is running on http://localhost:${PORT}`);
+//     });
+// });
