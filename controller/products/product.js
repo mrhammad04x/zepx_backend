@@ -226,14 +226,15 @@ const connection = require("../../connection/connection");
 const getproduct = (req, res) => {
   connection.query("SELECT * FROM products", (err, result) => {
     if (err) {
-      console.log("❌ DB error:", err);
+      console.log("DB error:", err);
       return res.status(500).json({ error: "Database error" });
     }
 
-    console.log("✅ Products fetched:", result.length);
+    console.log("✅ Product result length:", result.length);
     res.json(result);
   });
 };
+
 
 
 
