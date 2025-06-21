@@ -225,7 +225,6 @@ const connection = require("../../connection/connection");
 
 const getproduct = (req, res) => {
   const query = "SELECT * FROM products";
-  console.log("🚀 Running query:", query);
 
   connection.query(query, (err, result) => {
     if (err) {
