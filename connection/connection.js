@@ -40,7 +40,7 @@ let connection;
 function handleDisconnect() {
   connection = mysql.createConnection({
     host: process.env.DB_HOST,
-    port: process.env.DB_PORT || 3306,
+    port: process.env.DB_PORT ,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
@@ -55,15 +55,15 @@ function handleDisconnect() {
     }
   });
 
-  connection.on("error", function (err) {
-    console.error("💥 DB error:", err);
-    if (err.code === "PROTOCOL_CONNECTION_LOST" || err.fatal) {
-      console.log("🔁 Reconnecting to MySQL...");
-      handleDisconnect(); // Reconnect
-    } else {
-      throw err;
-    }
-  });
+//   connection.on("error", function (err) {
+//     console.error("💥 DB error:", err);
+//     if (err.code === "PROTOCOL_CONNECTION_LOST" || err.fatal) {
+//       console.log("🔁 Reconnecting to MySQL...");
+//       handleDisconnect(); // Reconnect
+//     } else {
+//       throw err;
+//     }
+//   });
 }
 
 handleDisconnect();
