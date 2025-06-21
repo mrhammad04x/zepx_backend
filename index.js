@@ -62,7 +62,7 @@ app.get("/", (req, res) => {
 
 
 //  Fix the .env variables
-const PORT = process.env.PORT || 4800;
+const PORT = process.env.PORT || 10000;
 
 connection.connect((error) => {
     if (error) {
