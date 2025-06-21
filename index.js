@@ -58,6 +58,7 @@ app.get("/", (req, res) => {
   res.send("🚀 ZEPX Backend Working!");
 });
 
+console.log("HOST =>", process.env.DB_HOST);
 
 
 //  Fix the .env variables
