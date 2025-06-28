@@ -56,13 +56,15 @@ app.use("/", orders);
 
 app.get("/", (req, res) => {
   res.send("🚀 ZEPX Backend Working!");
+  console.log("🚀 ZEPX Backend Working!");
 });
 
 
 
 
 //  Fix the .env variables
-const PORT = process.env.PORT || 10000;
+// const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT;
 
 connection.connect((error) => {
     if (error) {
