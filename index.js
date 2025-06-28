@@ -64,7 +64,6 @@ app.get("/", (req, res) => {
 
 //  Fix the .env variables
 const PORT = process.env.PORT || 10000;
-// const PORT = process.env.PORT;
 
 connection.connect((error) => {
     if (error) {
